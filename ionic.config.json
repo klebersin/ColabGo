@@ -1,0 +1,7 @@
+{
+  "name": "ColabGo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
