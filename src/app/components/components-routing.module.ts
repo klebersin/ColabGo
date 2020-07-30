@@ -6,12 +6,39 @@ import { ComponentsPage } from './components.page';
 const routes: Routes = [
   {
     path: '',
-    component: ComponentsPage
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
-    path: 'services',
-    loadChildren: () => import('./services/services.module').then( m => m.ServicesPageModule)
-  }
+    path: '',
+    component: ComponentsPage,
+    children: [
+      {
+        path: 'service-add',
+        loadChildren: () => import('./service-add/service-add.module').then( m => m.ServiceAddPageModule)
+      },
+      {
+        path: 'map',
+        loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+      },
+      {
+        path: 'home',
+        loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+      },
+      {
+        path: 'services',
+        loadChildren: () => import('./services/services.module').then( m => m.ServicesPageModule)
+      },
+    ]
+  },
+  {
+    path: 'service',
+    loadChildren: () => import('./service/service.module').then( m => m.ServicePageModule)
+  },
 ];
 
 @NgModule({

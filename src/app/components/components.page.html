@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>components</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-router-outlet></ion-router-outlet>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
 
-<ion-content>
+    <ion-tab-button tab="services">
+      <ion-icon name="briefcase"></ion-icon>
+      <ion-label>Servicios</ion-label>
+    </ion-tab-button>
 
-</ion-content>
+    <ion-tab-button tab="service-add">
+      <ion-icon name="add"></ion-icon>
+      <ion-label>Añadir</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map">
+      <ion-icon name="map"></ion-icon>
+      <ion-label>Mapa</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

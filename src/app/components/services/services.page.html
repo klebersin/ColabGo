@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>services</ion-title>
+    <ion-title>Servicios</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card button="true" *ngFor="let service of services">
+    <ion-card-header>
+      <ion-card-subtitle>{{service.serviceOwner}}</ion-card-subtitle>
+      <ion-card-title>{{service.serviceName}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{service.serviceDescription}}
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
