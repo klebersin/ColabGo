@@ -5,15 +5,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-card button="true" *ngFor="let service of services">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card button="true" *ngFor="let service of services"  (click)="openService(service)">
     <ion-card-header>
-      <ion-card-subtitle>{{service.serviceOwner}}</ion-card-subtitle>
-      <ion-card-title>{{service.serviceName}}</ion-card-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card-title  class="ion-text-center">{{service.serviceName}}</ion-card-title>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-header>
-
-    <ion-card-content>
-      {{service.serviceDescription}}
-    </ion-card-content>
   </ion-card>
 
 </ion-content>

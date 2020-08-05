@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear" (click)="closeModal()">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+    <ion-title>Servicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{service.serviceName}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            {{service.serviceDescription}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Numero de contacto: {{service.serviceContact}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div #map id="map"></div>      
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" (click)="sendSMS()">
+              Enviar mensaje
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>

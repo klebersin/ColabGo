@@ -8,7 +8,11 @@
 
 <ion-content class="ion-padding">
   <div id="container">
-      <ion-img [src]="imgUrl"></ion-img>
-    <ion-button expand="block" color="danger" routerLink="/main"> <ion-icon name="logo-google"></ion-icon>Iniciar Sesión con Google</ion-button>
+    <ion-img [src]="imgUrl"></ion-img>
+  </div>
+  <div id="container">
+    <ion-button expand="block" color="danger" (click)="loginwithgoogle()">
+      <ion-icon name="logo-google"></ion-icon>Iniciar Sesión con Google
+    </ion-button>
   </div>
 </ion-content>

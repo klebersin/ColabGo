@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "448986785671",
+    "firebase_url": "https://colabgo-1f69b.firebaseio.com",
+    "project_id": "colabgo-1f69b",
+    "storage_bucket": "colabgo-1f69b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448986785671:android:d119473fbd64151cc81522",
+        "android_client_info": {
+          "package_name": "com.myapp.colabgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "448986785671-7dpkv8o2h32it2rpafvtb0egccfurlqg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myapp.colabgo",
+            "certificate_hash": "8d2a7a09572dbf79ee8027651efb7bfa53196557"
+          }
+        },
+        {
+          "client_id": "448986785671-ptbd7s1pvr2gnc38nutbq9gb2likd2fv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2jW3kEdZuK0gyaiw2ot7vQoc17HSjgQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "448986785671-ptbd7s1pvr2gnc38nutbq9gb2likd2fv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

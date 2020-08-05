@@ -4,6 +4,46 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding" *ngIf="!showmap; else bloqueElse">
+    <ion-list>
+      <ion-item>
+        <ion-label  position="floating">
+          Nombre del servicio:
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="service.serviceName">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label  position="floating">
+          Descripción del servicio:
+        </ion-label>
+        <ion-textarea required type="text" [(ngModel)]="service.serviceDescription"></ion-textarea>
+
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          Número de contacto:
+        </ion-label>
+        
+        <ion-input required type="text" [(ngModel)]="service.serviceContact"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="showmap=true; getPosition()">
+        Elegir una ubicación
+      </ion-button>
+
+      <ion-button type="submit" expand="block" (click)="addService()">
+        Crear servicio
+        <ion-icon slot="end" name="create"></ion-icon>
+      </ion-button>
+    </ion-list>
 
 </ion-content>
+<ng-template #bloqueElse>
+  <ion-content class="ion-padding">
+    <ion-button expand="block" (click)="showmap=false">
+      Utilizar esta ubicación
+    </ion-button>
+    <div #map id="map"></div>
+  </ion-content>
+</ng-template>

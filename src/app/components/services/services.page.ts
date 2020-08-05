@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../../services/service.service';
+import { Service } from '../../interfaces/interfaces';
+import { ModalController } from '@ionic/angular';
+import { ServiceComponent } from '../service/service.component';
 
 @Component({
   selector: 'app-services',
@@ -7,27 +11,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesPage implements OnInit {
 
-  public services = [
-    {
-      serviceOwner: 'user 1',
-      serviceName: 'service #1',
-      serviceDescription: 'new service',
-    },
-    {
-      serviceOwner: 'user 1',
-      serviceName: 'service #2',
-      serviceDescription: 'other service'
-    },
-    {
-      serviceOwner: 'user 1',
-      serviceName: 'service #3',
-      serviceDescription: 'other service'
-    },
-  ];
+  public services: Service[];
 
-  constructor() { }
+  constructor(private serviceServices: ServiceService, private modal: ModalController) { }
 
   ngOnInit() {
+    this.getServices();
   }
 
+  getServices(){
+    this.serviceServices.getServices().subscribe( services => {
+      this.services = services;
+    } );
+  }
+  openService(service: Service){
+    this.modal.create({
+      component: ServiceComponent,
+      componentProps: {
+        serviceName: service.serviceName,
+        serviceDescription: service.serviceDescription,
+        serviceLat: service.serviceLat,
+        serviceLng: service.serviceLng,
+        serviceContact: service.serviceContact
+      }
+    }).then( (modal) => modal.present());
+  }
+
+  doRefresh(event) {
+    setTimeout(() => {
+      this.getServices();
+      event.target.complete();
+    }, 1000);
+  }
 }
