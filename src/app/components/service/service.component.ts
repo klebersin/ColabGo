@@ -25,7 +25,6 @@ export class ServiceComponent implements OnInit {
   ngOnInit() {
     this.getService();
   }
-
   sendSMS() {
     const options = {
       replaceLineBreaks: false,
@@ -34,7 +33,12 @@ export class ServiceComponent implements OnInit {
       }
     };
 
-    this.sms.send(this.service.serviceContact, 'Requiero tus servicios', options);
+    this.sms.send(this.service.serviceContact, 'Requiero tus servicios', options)
+      .then(() => {
+        alert('success');
+      }, () => {
+        alert('failed');
+      });
   }
 
   getService() {
